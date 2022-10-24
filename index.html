@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JetClass Website using Bootstrap</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    integrity="sha512-0S+nbAYis87iX26mmj/+fWt1MmaKCv80H+Mbo+Ne7ES4I6rxswpfnC6PxmLiw33Ywj2ghbtTw0FkLbMWqh4F7Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+    crossorigin="anonymous"></script>
+  <style>
+    .bg-drk {
+      background-color: black;
+    }
+
+    .btn-color {
+      background: linear-gradient(90deg, #13b89b, #29abe2);
+    }
+
+    .height-row {
+      height: 92vh;
+    }
+
+    .member-bg-image {
+      background-image: url(/lines.png);
+      background-position: 100% 0;
+      background-repeat: no-repeat;
+      background-size: 50%;
+    }
+
+    /* .t:hover{
+        color: #29abe2;
+      } */
+    .table-shadow {
+      border-radius: 13px 0 0 13px;
+      box-shadow: 0 4px 69px hsl(0deg 0% 55% / 25%);
+    }
+
+    table td:first-child,
+    table th:first-child {
+      background: white;
+      border-radius: 0 0 0 0;
+      border-right: 5px solid #f5f5f5 !important;
+      box-shadow: 1px 20px 30px hsl(0deg 0% 55% / 25%) !important;
+      box-sizing: border-box !important;
+    }
+
+    .support-bg {
+      background-image: url(/flight-section.png);
+      background-position: top;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .row {
+      --bs-gutter-x: 1.5rem;
+      --bs-gutter-y: 0;
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: calc(var(--bs-gutter-x)*-.5);
+      margin-right: calc(var(--bs-gutter-x)*-.5);
+      margin-top: calc(var(--bs-gutter-y)*-1);
+    }
+
+    .FWUSHead {
+      color: #32acc8;
+      font-size: 1.625rem;
+      padding-top: 15px;
+    }
+
+    .fs-28 {
+      font-size: calc(1.3rem + .6vw) !important;
+    }
+
+    /* .FWUImg {
+      max-width: 5rem;
+      transition: all .3s linear;
+    }
+
+    .ms-n2 {
+      margin-left: -0.5rem !important;
+    }
+
+    .mb-2 {
+      margin-bottom: 0.5rem !important;
+    }
+
+    .FWUSPara {
+      color: #6d6d6d;
+      font-size: 16px;
+      font-weight: 400;
+    } */
+
+    /* .span-11,
+    .span-13,
+    .span-16,
+    .span-18 {
+      background: #fff;
+      box-shadow: 0 0 58px rgb(0 0 0 / 10%);
+    } */
+
+    .p-textcolor {
+      color: grey;
+      font-weight: 300;
+      font-size: 16px;
+    }
+
+    .span-color {
+      color: rgb(50, 173, 200);
+    }
+
+    .imgwidth {
+      width: 80px;
+    }
+
+    /* div col :nth-child(2n){
+      background: #fff;
+      box-shadow: 0 0 58px rgb(0 0 0 / 10%);
+    } */
+
+
+    .bg-black {
+      background-color: black;
+    }
+
+    .span-colors {
+      color: white;
+    }
+
+    .project:nth-child(5n+1) {
+      background: #fff;
+      box-shadow: 0 0 58px rgb(0 0 0 / 10%);
+    }
+
+    .project:nth-child(5n+3) {
+      background: #fff;
+      box-shadow: 0 0 58px rgb(0 0 0 / 10%);
+    }
+
+    @media screen and (max-width: 992px) {
+      .project:nth-child(1) {
+        background: #fff;
+        box-shadow: 0 0 58px rgb(0 0 0 / 10%);
+      }
+
+      .project:nth-child(4) {
+        background: #fff;
+        box-shadow: 0 0 58px rgb(0 0 0 / 10%);
+      }
+
+      .project:nth-child(5) {
+        background: #fff;
+        box-shadow: 0 0 58px rgb(0 0 0 / 10%);
+      }
+
+      .project:nth-child(8) {
+        background: #fff;
+        box-shadow: 0 0 58px rgb(0 0 0 / 10%);
+      }
+    }
+
+    .fs {
+      font-size: 21px
+    }
+
+    .enroll-card {
+      background-color: #13b79a;
+      border-radius: 11px;
+      font-family: var(--Open-sans);
+      font-style: normal;
+      font-weight: 300;
+    }
+
+    .enroll-title {
+      font-size: 24px;
+      line-height: 33px;
+    }
+
+
+    .mt {
+      margin-top: 174px;
+    }
+
+    .enroll-now-title {
+      font-size: 24px;
+    }
+
+    .form-control {
+      border-top: none;
+      border-left: none;
+      border-right: none;
+    }
+
+    .reach-us-bg-img-2 {
+      background-image: url(/reach-us-bg.png);
+      background-position: 0 100%;
+      background-repeat: no-repeat;
+      background-size: 50%;
+      background-color: #32acc8;
+    }
+
+    .border-left {
+      border: 2px solid white;
+      padding: 10px;
+      border-top-left-radius: 13px;
+      border-bottom-left-radius: 13px;
+    }
+
+    .social-control {
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-bottom: none;
+    }
+
+    .cd-image-container {
+      margin: 0 auto;
+      position: relative;
+      width: 80%;
+    }
+
+    .cd-image-container img {
+      display: block;
+    }
+
+    .is-visible .cd-resize-img {
+      -webkit-animation: cd-bounce-in .7s;
+      animation: cd-bounce-in .7s;
+      border-right: 10px solid;
+      width: 50%;
+    }
+
+    .cd-resize-img,
+    .cd-resize-img img {
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+    }
+
+    .cd-resize-img {
+      backface-visibility: hidden;
+      overflow: hidden;
+      transform: translateZ(0);
+      width: 0;
+    }
+
+    .is-visible .cd-handle {
+      opacity: 1;
+      transform: translateZ(0) scale(1);
+      transition: transform .3s .7s, opacity 0s .7s;
+    }
+
+    .cd-resize-img img {
+      display: block;
+      max-width: none;
+      width: auto;
+    }
+    .cd-handle {
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgb(0 0 0 / 50%);
+      cursor: move;
+      height: 62px;
+      left: 50%;
+      margin-left: -35px;
+      margin-top: -22px;
+      padding: 16px 20px;
+      position: absolute;
+      top: 50%;
+
+    }
+
+    .img-comp-drag-text {
+      color: #32acc8;
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 500;
+    }
+
+    .footerText {
+
+      border-top: 1px solid #3c3c3c;
+      font-size: 16px;
+      padding-top: 1.5rem;
+
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-black">
+    <div class="container">
+      <img class="mt-2" src="./logo.svg" />
+      <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav mx-auto m-3 fs-5">
+          <li class="nav-item">
+            <a class="nav-link text-white mx-3" href="#">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white mx-3" href="#">HOW IT WORKS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white mx-3" href="#">FLEET</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white mx-3" href="#" id="navbarDropdownMenuLink " role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Service
+            </a>
+            <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
+              <li>
+                <a class="dropdown-item text-white" href="#">PRIVATE JET CHARTER</a>
+              </li>
+              <li>
+                <a class="dropdown-item text-white" href="#">HELICOPTER JET CHARTERS</a>
+              </li>
+              <li>
+                <a class="dropdown-item text-white" href="#">MEDICAL FLIGHTS</a>
+              </li>
+              <li>
+                <a class="dropdown-item text-white" href="#">CARGO CHARTERS</a>
+              </li>
+              <li>
+                <a class="dropdown-item text-white" href="#">GROUP CHARTERS</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-primary mx-3" href="#">MEMBERSHIP TYPES</a>
+          </li>
+          <button type="button" class="btn btn-color text-white ms-3 fs-5">
+            REGISTERED
+          </button>
+          <button type="button" class="btn btn-light span-color mx-3 fs-5">
+            LOGIN
+          </button>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- hero section -->
+  <section class="bg-drk member-bg-image">
+    <div class="container">
+      <div class="row height-row align-content-center">
+        <div class="col-md-6 col-sm-12 order-1 order-md-0">
+          <div class="display-2 fw-normal text-white lh-sm lh-md-85">
+            MEMBERSHIP
+            <div>TYPES</div>
+          </div>
+          <p class="text-white">
+            The power is at your fingertips. JetClass members have <br />
+            privileged access to transparent quotes directly from <br />
+            our global network of aircraft operators. We have drawn <br />
+            up the perfect membership program, with no hidden <br />
+            fees.
+          </p>
+
+          <p class="mt-5">
+            <button type="button" class="btn btn-color text-white fs-4">
+              JOIN FOR FREE
+            </button>
+          </p>
+        </div>
+        <div class="col-md-6 col-sm-12 order-0 order-md-1">
+          <div>
+            <img class="img-fluid" src="/aeroplane image.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Hero section 2 -->
+  <section class="container-fluid ">
+    <div class="row"></div>
+    <div class="col-11 mx-auto max-width py-5">
+      <div class="fw-normal fs-1 lh-sm lh-md-50 mb-5  text-center">
+        <span class="text-primary">The Right Membership</span>
+        <span class="fw-light">For Every Traveler</span>
+        <div class="  table-shadow fs-4 mt-5 table-borderless  ">
+          <table class="table-plans   ">
+            <table class="table  table-borderless ">
+              <thead>
+                <tr>
+                  <th scope="col ">Details</th>
+                  <th scope="col">Base</th>
+                  <th scope="col">Elite</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td>Pay As You Go</td>
+                  <td>
+                    Recommended For Frequent Travelers <br />
+                    flying 20+ hours a year
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class="fw-light">
+                  <td>Price</td>
+                  <td>FREE</td>
+                  <td>USD 17,900</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class="fw-light">
+                  <td> Markups (Agent <br> Commission)</td>
+                  <td>Dynamic markup</td>
+                  <td>NO MARKUP</td>
+                </tr>
+                <tr class="fw-light">
+                  <td> Payment and Charter <br> Contract with</td>
+                  <td>JetClass</td>
+                  <td>Directly with the Operator</td>
+                </tr>
+                <tr class="fw-light">
+                  <td> Aircraft Operator Details</td>
+                  <td>Limited access</td>
+                  <td>Full disclosure of operator and <br> aircraft details</td>
+                </tr>
+                <tr class="fw-light">
+                  <td> ETA on first quotes</td>
+                  <td>On average within 2 <br> hours</td>
+                  <td>On average within 30 minutes</td>
+                </tr>
+                <tr class="fw-light ">
+                  <td> Flight Management</td>
+                  <td>Pre-flight operational <br> support</td>
+                  <td>Dedicated Flight Ops Manager</td>
+                </tr>
+
+
+              <tfoot>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td> </td>
+                  <td><button type="button" class="btn btn-color text-white fs-4">
+                      JOIN FOR FREE
+                    </button></td>
+                  <td><button type="button" class="btn btn-color text-white fs-4">
+                      ENROLL NOW
+                    </button></td>
+                </tr>
+              </tfoot>
+              </tbody>
+            </table>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- unrivalled flight section -->
+  <section class="container-fluid support-bg mt-3">
+    <div class="row">
+      <div class="col-11 mx-auto max-width p-5">
+        <h1 class="fw-normal text-center mb-5"> <span class="span-color">Unrivalled Flight</span> <span
+            class="fw-normal">Support</span></h1>
+        <div class="card-holder">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4">
+            <div class="col project p-4 p-xl-5 text-md-start">
+              <img class="imgwidth mb-3" src="./sm-logo.svg" alt="">
+              <h4 class="span-color fw-normal">Flight brief</h4>
+              <p class="p-textcolor mt-3">We send pre-departure flight briefs to keep you up-to-date and informed.</p>
+            </div>
+            <div class="col  p-4  p-xl-5 text-md-start">
+              <img class="imgwidth mb-3" src="./status.svg" alt="">
+              <h4 class="span-color fw-normal">Status update</h4>
+              <p class="p-textcolor mt-3">Constant update on the status of permissions and slot confirmations on the
+                route.</p>
+            </div>
+            <div class="col project p-4 p-xl-5 text-md-start">
+              <img class="imgwidth mb-3" src="./forecast.svg" alt="">
+              <h4 class="span-color fw-normal">Forecast</h4>
+              <p class="p-textcolor mt-3">Up to date weather forecast for both departure and arrival destinations, to
+                predict potential delays.</p>
+            </div>
+            <div class="col p-4  project p-xl-5 text-md-start">
+              <img class="imgwidth mb-3" src="./assistance.svg" alt="">
+              <h4 class="span-color fw-normal">Assistance</h4>
+              <p class="p-textcolor mt-3">Assistance with travel documents (e.g. visa applications, & any other specific
+                entry requirements at your destination)</p>
+            </div>
+            <div class="col span-15 project p-4 p-xl-5 text-md-start">
+              <img class="imgwidth mb-3" src="./catering.svg" alt="">
+              <h4 class="span-color fw-normal">Catering</h4>
+              <p class="p-textcolor mt-3">n-flight catering can be ordered from our partnered exclusive caterers, or
+                choose from your preferred restaurant.</p>
+            </div>
+            <div class="col project p-4 p-xl-5 text-md-start">
+              <img class="imgwidth mb-3" src="./arrangements.svg" alt="">
+              <h4 class="span-color fw-normal">Arrangements</h4>
+              <p class="p-textcolor mt-3">Arrangements for specific transfers and bodyguard services if required for our
+                customers.</p>
+            </div>
+            <div class="col project p-4 p-xl-5 text-md-start">
+              <img class="imgwidth mb-3" src="./immigration.svg" alt="">
+              <h4 class="span-color fw-normal">Immigration</h4>
+              <p class="p-textcolor mt-3">At JetClass we provide Immigration & Customs clearances assistance to our
+                clients.</p>
+            </div>
+            <div class="col project p-4 p-xl-5 text-md-start">
+              <img class="imgwidth mb-3" src="./report.svg" alt="">
+              <h4 class="span-color fw-normal">Report</h4>
+              <p class="p-textcolor mt-3">Regular flight status notifications & post-flight reports to ensure a seamless
+                experience.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- hero section 3 -->
+  <section class="container-fluid bg-black mt-3 py-5">
+    <div class="row">
+      <div class="col-11 mx-auto max-width p-5">
+        <h1 class="fw-normal text-center mb-5"> <span class="span-colors">Why the</span> <span
+            class="fw-bold span-color ">Elite program</span></h1>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3">
+          <div class="col span-11 p-4 p-xl-5 text-md-start">
+            <img class="imgwidth mb-3" src="./commission.svg" alt="">
+            <h4 class="span-color fw-normal">0% commission</h4>
+            <p class="p-textcolor mt-3">Avoid traditional broker fees which range between 5% - 50% on top of the actual
+              charter cost. Besides not charging such commissions, we are 100% transparent in our pricing with no hidden
+              extras</p>
+          </div>
+          <div class="col span-12 p-4 p-xl-5 text-md-start">
+            <img class="imgwidth mb-3" src="./direct-payment.svg" alt="">
+            <h4 class="span-color fw-normal">Direct payment to operator</h4>
+            <p class="p-textcolor mt-3">Our direct-to-operator payment option allows you to book last-minute flights as
+              well as further underlines our transparent pricing structure.</p>
+          </div>
+          <div class="col span-13 p-4 p-xl-5 text-md-start">
+            <img class="imgwidth mb-3" src="./quick-qoutes.svg" alt="">
+            <h4 class="span-color fw-normal">Quick quotes within 30 minutes</h4>
+            <p class="p-textcolor mt-3">Experience a new level of service! Within minutes, our 24/7 team will search for
+              the best available aircraft, fight for the best prices, and present you with the sourced options..</p>
+          </div>
+          <div class="col span-14 p-4 p-xl-5 text-md-start">
+            <img class="imgwidth mb-3" src="./verified-aircraft.svg" alt="">
+            <h4 class="span-color fw-normal">Verified aircraft & operator details</h4>
+            <p class="p-textcolor mt-3">Besides disclosing operator details, we display relevant aircraft details,
+              including the tail registration, YOM, and images, so you can cross-verify the details yourself before
+              confirming the flight.</p>
+          </div>
+          <div class="col span-15 p-4 p-xl-5 text-md-start">
+            <img class="imgwidth mb-3" src="./dedicated-flight.svg" alt="">
+            <h4 class="span-color fw-normal">Dedicated flight support</h4>
+            <p class="p-textcolor mt-3">From pre-flight planning and booking to complete post-flight management, our
+              team of industry professionals ensures every trip is a tailor-made pleasure.</p>
+          </div>
+          <div class="col span-16 p-4 p-xl-5 text-md-start">
+            <img class="imgwidth mb-3" src="./no-depost.svg" alt="">
+            <h4 class="span-color fw-normal">No deposit or waiting period</h4>
+            <p class="p-textcolor mt-3">After purchasing your membership, the only additional costs are the actual
+              charter cost and any additional flight-related fees such as de-icing, special catering, etc.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="container">
+      <div class="row height-row align-content-center">
+        <div class="col-md-6 order-md-0 order-1 mt-md-0 mt-5">
+          <div>
+            <img class="img-fluid" src="/plane.jpg" alt="" />
+          </div>
+        </div>
+        <div class="col-md-6 order-md-0 order-1 mt-md-0 mt-5 ">
+          <h2 class=" fw-normal display-5 lh-sm lh-md-85 mt-5 py-3 "> <span class="span-colors">Who can </span> <span
+              class="span-color">benifits from this?</span>
+            </h3>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-2 g-lg-1 mt-4 ">
+              <div class="col">
+                <div class="d-flex align-item-center ">
+                  <img src="/tick.svg">
+                  <div class="text-white ms-3">Frequent flyers</div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="d-flex align-item-center ">
+                  <img src="/tick.svg">
+                  <div class="text-white ms-3">Government</div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="d-flex align-item-center ">
+                  <img src="/tick.svg">
+                  <div class="text-white ms-3">MICE agencies</div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="d-flex align-item-center  ">
+                  <img src="/tick.svg">
+                  <div class="text-white ms-3">Corporates</div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="d-flex align-item-center ">
+                  <img src="/tick.svg">
+                  <div class="text-white ms-3">Family offices</div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="d-flex align-item-center  ">
+                  <img src="/tick.svg">
+                  <div class="text-white ms-3">Travel agent</div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="row row-margins my-9">
+      <div class="col-11 mx-auto">
+        <h1 class="text-start text-md-center display-3 mb-3">
+          <div class="fw-normal text-white">Our Elite Program</div>
+          <div class="fw-normal span-color">For Frequent Flyers</div>
+        </h1>
+        <p class="text-start text-md-center fs text-white mt-4 mb-5">Our frequent flyer program, in addition to
+          exclusive access to a global <br> fleet of aircraft, offers unique pre
+          and post flight benefits befitting your <br> exclusive Elite membership status.</p>
+      </div>
+      <div class="col-md-8 col-lg-6 col-11 mx-auto d-flex justify-content-center">
+        <div class="row ps-md-5 ms-xl-5">
+          <div class="col-md-6 col-sm-12 ps-0">
+            <div class="mb-3 d-flex align-items-center ">
+              <img src="/tick.svg" class=" me-3">
+              <div class="text-white">NO Markups</div>
+            </div>
+            <div class="mb-3 d-flex align-items-center ">
+              <img src="/tick.svg" class=" me-3">
+              <div class="text-white">Verified aircraft & operator details</div>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12 ps-0">
+            <div class="mb-3 d-flex align-items-center ">
+              <img src="/tick.svg" class=" me-3">
+              <div class="text-white">Dedicated flight support</div>
+            </div>
+            <div class="mb-3 d-flex align-items-center ">
+              <img src="/tick.svg" class=" me-3">
+              <div class="text-white">Quick quotes within 30 minutes</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container mt-5  ">
+        <div class="col-11 mx-auto" style="width: 900px;">
+          <div class="row enroll-card">
+            <div class="col-md-6 ">
+              <div class="card-body text-start">
+                <h5 class="card-title text-white">Enroll <span class="fw-bold">Now </span></h5>
+                <p class="card-text text-white">and become an <span class="fw-bold"> Elite Member</span></p>
+              </div>
+            </div>
+            <div class="col-md-6 d-flex text-end my-3">
+              <div class="card-body">
+                <button type="button" class="btn span-color bg-white  fs-3">
+                  $17,900/year
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-11 mx-auto">
+      <h1 class="text-start text-md-center display-3 mb-3 mt-5">
+        <div class="fw-normal text-white">Experience <span class="span-color">The Difference</span></div>
+      </h1>
+      <p class="text-start text-md-center fs text-white mt-5 mb-5">No markups with full disclosure of aircraft and
+        operator details</p>
+    </div>
+    <div class="col-md-12 mb-1  ">
+      <div class="container-lg">
+        <figure class="cd-image-container is-visible">
+          <img src="/members.png" class="img-fluid">
+          <span class="cd-img-label" data-type="original"></span>
+          <div class="cd-resize-img">
+            <img src="/base.png" class="img-fluid">
+            <span class="cd-img-label" data-type="modified"></span>
+          </div>
+          <span class="cd-handle">
+            <div>
+              <img src="/exchange.svg">
+            </div>
+            <div class="img-comp-drag-text">Drag </div>
+          </span>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- hero page journey -->
+  <section>
+    <div class="container  ">
+      <div class="col-md-11 mx-auto max-width mt">
+        <h1 class="text-start text-md-center display-4 mb-3  ">
+          <div class="fw-normal">Not sure which <span class="span-color">membership is right for you?</span></div>
+        </h1>
+        <p class="text-start text-md-center fs  mt-5 mb-5">Begin your journey for free by using our revolutionary
+          private jet booking platform
+          and experience the benefits of our unparalleled service.</p>
+        <p class="mt-5 text-start   text-md-center">
+          <button type="button" class="btn btn-color text-white fs-4">
+            JOIN FOR FREE
+          </button>
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- form section -->
+  <section>
+    <div class="container   height-row   ">
+      <div class="col-md-11 mx-auto max-width mt">
+        <h1 class="text-start text-md-center display-6 mb-3  ">
+          <div class="fw-normal">Any <span class="span-color">Question Left?</span></div>
+          <div class="container mt-5 border shadow ">
+            <div class="row ">
+              <div class="col-4 reach-us-bg-img-2 border-left  ">
+                <div
+                  class=" d-flex align-items-center justify-content-center justify-content-lg-start px-0 px-xl-4 mt-5">
+                  <img src="/phone.png" width="31.08px" class=" img-fluid me-4">
+                  <h1 class="  fw-normal text-white ">Reach Us </h1>
+                </div>
+                <div
+                  class=" d-flex align-items-center justify-content-center justify-content-lg-start px-0 px-xl-4 mt-5">
+                  <img src="/usa.png" width="31.08px" class=" img-fluid me-4 display-3">
+                  <h6 class="  fw-normal text-white fs-5 ">US:+1(305)250-2023 </h6>
+                </div>
+                <div
+                  class=" d-flex align-items-center justify-content-center justify-content-lg-start px-0 px-xl-4 mt-5">
+                  <img src="/uk.png" width="31.08px" class=" img-fluid me-4 display-3">
+                  <h6 class="  fw-normal text-white fs-5 ">UK:+447897078788 </h6>
+                </div>
+              </div>
+              <div class="col-md-8 mt-5 px-4 ">
+                <div class=" d-flex align-items-center justify-content-center justify-content-lg-start px-0 px-xl-4">
+                </div>
+                <h1 class="text-start fw-normal ">Write us</h1>
+                <form class="row g-3 needs-validation" novalidate id="form-valid">
+                  <div class="col-md-6 text-start fs-28 mt-2">
+                    <label for="validationCustom01" class="form-label">Full Name</label>
+                    <input type="text" name="name" class="form-control" id="validationCustom01" required>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                  </div>
+                  <div class="col-md-6 text-start fs-28 mt-2">
+                    <label for="validationCustomUsername" class="form-label">Email</label>
+                    <div class="input-group has-validation ">
+                      <input type="email" name="email" class="form-control" id="validationCustomUsername"
+                        aria-describedby="inputGroupPrepend" required>
+                      <div class="invalid-feedback">
+                        Email is required
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12 text-start fs-28 mt-5 ">
+                    <label for="validationCustom02" class="form-label">Message</label>
+                    <input type="message" name="message" class="form-control" id="validationCustom02" required>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                  </div>
+                  <div class="col-md-12 text-start fs-28 mt-5 ">
+                    <label for="validationCustom03" class="form-label">Phone</label>
+                    <input type="phone" name="phone" class="form-control" id="validationCustom03" required>
+                    <div class="invalid-feedback">
+                      Phone Number is required
+                    </div>
+                  </div>
+                  <div class="col-12 text-end py-5">
+                    <button class="btn span-colors btn-color" style="width: 200px" type="submit">Submit </button>
+                  </div>
+                  <div class="card">
+                    <div id="response">
+    
+                    </div>
+                  </div>
+                </form>
+              </div>
+             
+            </div>
+          </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  <!-- footer -->
+  <footer>
+    <section class="container-fluid bg-black mt-5">
+      <div class="row">
+        <div class="col-11 mx-auto max-width p-5">
+
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-5">
+            <div class="col span-11 p-4 p-xl-5 text-md-start">
+              <h4 class="text-white fw-normal">Home</h4>
+              <p class="p-textcolor text-white mt-3"> <span> How it works <br> </span>
+                <span> Membership <br></span>
+                <span>Register <br> </span>
+                <span> Login </span>
+              </p>
+            </div>
+            <div class="col span-11 p-4 p-xl-5 text-md-start">
+              <h4 class="text-white fw-normal">Services</h4>
+              <p class="p-textcolor mt-3 text-white"> <span> Private jet Charters </span>
+                <span> Group Charters</span>
+                <span>Helicopter Charters <br> </span>
+                <span> Medical Flights </span>
+                <span>Cargo Charters </span>
+              </p>
+            </div>
+            <div class="col span-11 p-4 p-xl-5 text-md-start">
+              <h4 class="text-white fw-normal">Legal</h4>
+              <p class="p-textcolor mt-3 text-white"> <span> Privacy Policy </span>
+                <span> Imprint & Legal</span>
+                <span class=" fw-bold">JetClass Airline <br> <img src="/new-page-link.svg"> <br> </span>
+                <span class=" fw-bold">FlightPooling by </span>
+                <span class=" fw-bold">JetClass new</span> <img src="/new-page-link.svg">
+              </p>
+            </div>
+            <div class="col span-11 p-4 p-xl-5 text-md-start">
+              <h4 class="text-white fw-normal ">Hotline</h4>
+              <p class="p-textcolor mt-3 text-white"> <span class=" fw-bold"> US: </span> <span>+1 (305) 250-2023 <br> </span>
+                <span class="text-white fw-bold"> UK: </span> <span>+44 789 7078 788</span>
+              </p>
+            </div>
+            <div class="col p-4 p-xl-5 text-md-start">
+              <h4 class="text-white fw-normal px-3">Social</h4>
+              <ul class="list-unstyled d-flex px-0  ">
+                <li class="text-white px-2">
+                <i class="fab fa-facebook "></i>
+                </li>
+                <li class="text-white px-2">
+                <i class="fab fa-instagram"></i>
+                </li>
+                <li class="text-white px-2">
+                <i class="fab fa-twitter"></i>
+                </li>
+                <li class="text-white px-2">
+                <i class="fab fa-linkedin"></i>
+                </li>
+              </ul>
+              <div >
+                <img class="mb-4" style="cursor: pointer;" src="/app-store.svg">
+                <img src="/google-play.svg"  style="cursor: pointer;" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="col-md- col-12 text-start">
+            <img src="/argus.png"  class="img-fluid">
+            <img src="/wyvern (1).png" class="img-fluid">
+          </div>
+          <div class="col-12 text-white fs  py-4">
+            <p>JetClass is a private jet sourcing and booking platform that arranges charters for customers from
+              third-party aircraft operators. All such charter flights are operated by FAA certified Part 135 air
+              carriers and JetClass acts as an agent. It is not a direct air carrier and does not carry out operations
+              of aircraft.</p>
+          </div>
+
+        </div>
+      </div>
+      <div class="footerText text-center text-white py-3">
+        <p>© 2022 JetClass | All Rights Reserved</p>
+      </div>
+    </section>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+
+  <!-- form validation JS -->
+  <script>
+    (function () {
+      'use strict'
+
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.querySelectorAll('.needs-validation')
+
+      // Loop over them and prevent submission
+      Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+          form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+              event.preventDefault()
+              event.stopPropagation()
+            }
+
+            form.classList.add('was-validated')
+          }, false)
+        })
+    })()
+ 
+    // this is the id of the form
+$("#form-valid").submit(function(e) {
+
+e.preventDefault(); // avoid to execute the actual submit of the form.
+
+var form = $(this);
+var actionUrl = form.attr('action'); 
+console.log("form",$('form').serialize());
+
+$.ajax({
+    type: "POST",
+    url: "http://localhost:4000/api/addPerson",
+    data: form.serialize(), // serializes the form's elements.
+    success: function(data)
+    {
+      alert(data); // show response from the php script.
+    }
+});
+});
+
+  </script>
+  <!-- camparison slider  -->
+  <script>
+    jQuery(document).ready(function ($) {
+      //function to check if the .cd-image-container is in the viewport here
+      // ...
+
+      //make the .cd-handle element draggable and modify .cd-resize-img width according to its position
+      $('.cd-image-container').each(function () {
+        var actual = $(this);
+        drags(actual.find('.cd-handle'), actual.find('.cd-resize-img'), actual);
+      });
+
+      //function to upadate images label visibility here
+      // ...
+    });
+
+    //draggable funtionality - credits to http://css-tricks.com/snippets/jquery/draggable-without-jquery-ui/
+    function drags(dragElement, resizeElement, container) {
+      dragElement.on("mousedown vmousedown", function (e) {
+        dragElement.addClass('draggable');
+        resizeElement.addClass('resizable');
+
+        var dragWidth = dragElement.outerWidth(),
+          xPosition = dragElement.offset().left + dragWidth - e.pageX,
+          containerOffset = container.offset().left,
+          containerWidth = container.outerWidth(),
+          minLeft = containerOffset + 10,
+          maxLeft = containerOffset + containerWidth - dragWidth - 10;
+
+        dragElement.parents().on("mousemove vmousemove", function (e) {
+          leftValue = e.pageX + xPosition - dragWidth;
+
+          //constrain the draggable element to move inside its container
+          if (leftValue < minLeft) {
+            leftValue = minLeft;
+          } else if (leftValue > maxLeft) {
+            leftValue = maxLeft;
+          }
+
+          widthValue = (leftValue + dragWidth / 2 - containerOffset) * 100 / containerWidth + '%';
+
+          $('.draggable').css('left', widthValue).on("mouseup vmouseup", function () {
+            $(this).removeClass('draggable');
+            resizeElement.removeClass('resizable');
+          });
+
+          $('.resizable').css('width', widthValue);
+
+          //function to upadate images label visibility here
+          // ...
+
+        }).on("mouseup vmouseup", function (e) {
+          dragElement.removeClass('draggable');
+          resizeElement.removeClass('resizable');
+        });
+        e.preventDefault();
+      }).on("mouseup vmouseup", function (e) {
+        dragElement.removeClass('draggable');
+        resizeElement.removeClass('resizable');
+      });
+    }
+  </script>
+</body>
+
+</html>
