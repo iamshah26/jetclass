@@ -22,10 +22,6 @@
       background: linear-gradient(90deg, #13b89b, #29abe2);
     }
 
-    .height-row {
-      height: 92vh;
-    }
-
     .member-bg-image {
       background-image: url(/lines.png);
       background-position: 100% 0;
@@ -207,11 +203,26 @@
       background-color: #32acc8;
     }
 
+    @media screen and (max-width: 575px) {
+
+      .border-left {
+        border-top-left-radius: 13px;
+        border-bottom-left-radius: 13px;
+      }
+    }
+
+    @media screen and (max-width: 775px) {
+
+      .border-left {
+        border-top-left-radius: 13px;
+        border-bottom-left-radius: 13px;
+      }
+    }
+
     .border-left {
-      border: 2px solid white;
+
       padding: 10px;
-      border-top-left-radius: 13px;
-      border-bottom-left-radius: 13px;
+
     }
 
     .social-control {
@@ -294,22 +305,117 @@
       padding-top: 1.5rem;
 
     }
+
+    .tResponsive {
+      width: 100%;
+    }
+
+    .height-row {
+      height: 92vh;
+    }
+
+    .enroll-btn-1:hover,
+    .enroll-btn-2 {
+      background: transparent;
+      color: var(--clr-white);
+    }
+
+    .price_btn {
+      background: white;
+      border: 2px solid transparent;
+      color: #13b89b;
+      padding: 15px 13px;
+    }
+
+    .price_btn:hover {
+      background: transparent !important;
+      border: 2px solid white;
+      color: white;
+    }
+
+    .register_btn {
+      background: linear-gradient(90deg, #13b89b, #29abe2);
+      border: 2px solid transparent;
+      color: white;
+      padding: 4px 16px;
+    }
+
+    .submit_btn {
+      background: linear-gradient(90deg, #13b89b, #29abe2);
+      border: 2px solid transparent;
+      color: white;
+      padding: 4px 16px;
+    }
+
+    .submit_btn:hover {
+      background: transparent !important;
+      border: 2px solid #32acc8;
+      color: #32acc8;
+    }
+
+    .register_btn:hover {
+      background: transparent !important;
+      border: 2px solid #32acc8;
+      color: #32acc8;
+    }
+
+
+    .login_btn:hover {
+      background: transparent !important;
+      border: 2px solid white;
+      color: #32acc8;
+    }
+
+    .login_btn {
+      background: white;
+      border: 2px solid transparent;
+      color: #32acc8;
+      padding: 4px 16px;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: block;
+
+    }
+
+    .dropdown-item:focus,
+    .dropdown-item:hover {
+      color: #29abe2 !important;
+      background-color: transparent;
+    }
+
+    a:hover {
+      color: #29abe2 !important;
+    }
+
+    .any_questions_first_col {
+      border-radius: 10px 0 0 10px;
+    }
+
+    @media only screen and (max-width: 768px) {
+      .any_questions_first_col {
+        border-radius: 10px 10px 0 0;
+      }
+    }
+    .enroll-now-title {
+    font-size: 24px;
+    line-height: 33px;
+}
   </style>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-black">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
     <div class="container">
       <img class="mt-2" src="./logo.svg" />
-      <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse"
-        data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-        aria-label="Toggle navigation">
+      <button class="navbar-toggler bg-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav mx-auto m-3 fs-5">
+        <ul class="navbar-nav mx-auto m-3 fs-5  ">
           <li class="nav-item">
-            <a class="nav-link text-white mx-3" href="#">HOME</a>
+            <a class="nav-link text-white mx-3 " href="#">HOME</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-white mx-3" href="#">HOW IT WORKS</a>
@@ -341,14 +447,21 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-primary mx-3" href="#">MEMBERSHIP TYPES</a>
+            <a class="nav-link  mx-3" style="color: #32ACC8;" href="#">MEMBERSHIP TYPES</a>
           </li>
-          <button type="button" class="btn btn-color text-white ms-3 fs-5">
-            REGISTERED
-          </button>
-          <button type="button" class="btn btn-light span-color mx-3 fs-5">
-            LOGIN
-          </button>
+          <ul
+            class="custom_nav auth-nav list-unstyled ms-lg-auto d-md-flex justify-content-md-center items-align-md-center">
+            <li>
+              <button type="button" class="register_btn  ms-3 fs-5 mt-1 rounded">
+                REGISTERED
+              </button>
+            </li>
+            <li>
+              <button type="button" class=" login_btn  mx-3 fs-5 mt-1 rounded">
+                LOGIN
+              </button>
+            </li>
+          </ul>
         </ul>
       </div>
     </div>
@@ -372,7 +485,7 @@
           </p>
 
           <p class="mt-5">
-            <button type="button" class="btn btn-color text-white fs-4">
+            <button type="button" class="register_btn fs-4 rounded">
               JOIN FOR FREE
             </button>
           </p>
@@ -386,16 +499,25 @@
     </div>
   </section>
   <!-- Hero section 2 -->
-  <section class="container-fluid ">
+  <section class="container-fluid py-5">
     <div class="row"></div>
-    <div class="col-11 mx-auto max-width py-5">
+    <div class="col-11 mx-auto max-width py-5 ">
       <div class="fw-normal fs-1 lh-sm lh-md-50 mb-5  text-center">
-        <span class="text-primary">The Right Membership</span>
-        <span class="fw-light">For Every Traveler</span>
-        <div class="  table-shadow fs-4 mt-5 table-borderless  ">
-          <table class="table-plans   ">
-            <table class="table  table-borderless ">
+        <span class="span-color display-4">The Right Membership</span>
+        <span class="fw-light display-4">For Every Traveler</span>
+        <div class="table-shadow fs-4 mt-5 table-borderless table-responsive-sm table-responsive " style="min-width: 600px;">
+          <table class="table-plans ">
+            <table class="table tResponsive table-borderless mb-0 ">
               <thead>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+              </tr><tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
                 <tr>
                   <th scope="col ">Details</th>
                   <th scope="col">Base</th>
@@ -476,13 +598,23 @@
                 </tr>
                 <tr>
                   <td> </td>
-                  <td><button type="button" class="btn btn-color text-white fs-4">
+                  <td><button type="button" class="register_btn p-3 fs-4 rounded">
                       JOIN FOR FREE
                     </button></td>
-                  <td><button type="button" class="btn btn-color text-white fs-4">
+                  <td><button type="button" class="register_btn p-3 fs-4 rounded">
                       ENROLL NOW
                     </button></td>
                 </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr> 
               </tfoot>
               </tbody>
             </table>
@@ -494,9 +626,9 @@
   <!-- unrivalled flight section -->
   <section class="container-fluid support-bg mt-3">
     <div class="row">
-      <div class="col-11 mx-auto max-width p-5">
-        <h1 class="fw-normal text-center mb-5"> <span class="span-color">Unrivalled Flight</span> <span
-            class="fw-normal">Support</span></h1>
+      <div class="col-11 mx-auto max-width  pb-5 mb-5">
+        <h1 class="fw-normal text-center mb-5 display-4"> <span class="span-color">Unrivalled Flight</span> <span
+            class="fw-normal ">Support</span></h1>
         <div class="card-holder">
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4">
             <div class="col project p-4 p-xl-5 text-md-start">
@@ -557,7 +689,7 @@
   <section class="container-fluid bg-black  py-5">
     <div class="row">
       <div class="col-11 mx-auto max-width p-5">
-        <h1 class="fw-normal text-center mb-5"> <span class="span-colors">Why the</span> <span
+        <h1 class="fw-normal text-center display-4 mb-5"> <span class="span-colors">Why the</span> <span
             class="fw-bold span-color ">Elite program</span></h1>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3">
           <div class="col span-11 p-4 p-xl-5 text-md-start">
@@ -602,15 +734,15 @@
       </div>
     </div>
     </div>
-    <div class="container">
-      <div class="row height-row align-content-center">
+    <div class="container py-5 my-5">
+      <div class="row  py-5 align-content-center">
         <div class="col-md-6 order-md-0 order-1 mt-md-0 mt-5">
           <div>
             <img class="img-fluid" src="/plane.jpg" alt="" />
           </div>
         </div>
-        <div class="col-md-6 order-md-0 order-1 mt-md-0 mt-5 ">
-          <h2 class=" fw-normal display-5 lh-sm lh-md-85 mt-5 py-3 "> <span class="span-colors">Who can </span> <span
+        <div class="col-md-6 order-md-0 order-1 mt-md-5 mt-0 ">
+          <h2 class=" fw-normal display-5 lh-sm lh-md-85  py-3 "> <span class="span-colors">Who can </span> <span
               class="span-color">benifits from this?</span>
             </h3>
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-2 g-lg-1 mt-4 ">
@@ -654,19 +786,19 @@
         </div>
       </div>
     </div>
-    <div class="row row-margins my-9">
+    <div class="row row-margins  py-5 my-5">
       <div class="col-11 mx-auto">
-        <h1 class="text-start text-md-center display-3 mb-3">
+        <h1 class="text-start text-md-center  mb-3">
           <div class="fw-normal text-white">Our Elite Program</div>
           <div class="fw-normal span-color">For Frequent Flyers</div>
         </h1>
         <p class="text-start text-md-center fs text-white mt-4 mb-5">Our frequent flyer program, in addition to
-          exclusive access to a global <br> fleet of aircraft, offers unique pre
-          and post flight benefits befitting your <br> exclusive Elite membership status.</p>
+          exclusive access to a global fleet of aircraft, offers unique pre <br>
+          and post flight benefits befitting your exclusive Elite membership status.</p>
       </div>
       <div class="col-md-8 col-lg-6 col-11 mx-auto d-flex justify-content-center">
         <div class="row ps-md-5 ms-xl-5">
-          <div class="col-md-6 col-sm-12 ps-0">
+          <div class="col-md-6 col-sm-12 ">
             <div class="mb-3 d-flex align-items-center ">
               <img src="/tick.svg" class=" me-3">
               <div class="text-white">NO Markups</div>
@@ -689,18 +821,18 @@
         </div>
       </div>
       <div class="container mt-5  ">
-        <div class="col-11 mx-auto" style="width: 900px;">
-          <div class="row enroll-card">
+        <div class="col-11 col-md-6   mx-auto">
+          <div class="row align-item-center enroll-card">
             <div class="col-md-6 ">
               <div class="card-body text-start">
-                <h5 class="card-title text-white">Enroll <span class="fw-bold">Now </span></h5>
-                <p class="card-text text-white">and become an <span class="fw-bold"> Elite Member</span></p>
+                <h5 class="card-title text-white enroll-now-title mb-0">Enroll <span class="fw-bold">Now </span></h5>
+                <p class="card-text text-white fs">and become an <span class="fw-bold"> Elite Member</span></p>
               </div>
             </div>
-            <div class="col-md-6 d-flex text-end my-3">
+            <div class="col-md-6 d-flex text-end  my-auto">
               <div class="card-body">
-                <button type="button" class="btn span-color bg-white  fs-3">
-                  $17,900/year
+                <button type="button" class="price_btn rounded">
+                  $ 17,900/year
                 </button>
               </div>
             </div>
@@ -708,8 +840,9 @@
         </div>
       </div>
     </div>
+<section class="py-5 my-5">
 
-    <div class="col-11 mx-auto">
+    <div class="col-11 mx-auto ">
       <h1 class="text-start text-md-center display-3 mb-3 mt-5">
         <div class="fw-normal text-white">Experience <span class="span-color">The Difference</span></div>
       </h1>
@@ -735,9 +868,9 @@
       </div>
     </div>
   </section>
-
+</section>
   <!-- hero page journey -->
-  <section>
+  <section class="py-5 my-5 ">
     <div class="container  ">
       <div class="col-md-11 mx-auto max-width mt">
         <h1 class="text-start text-md-center display-4 mb-3  ">
@@ -747,7 +880,7 @@
           private jet booking platform
           and experience the benefits of our unparalleled service.</p>
         <p class="mt-5 text-start   text-md-center">
-          <button type="button" class="btn btn-color text-white fs-4">
+          <button type="button" class="register_btn fs-4">
             JOIN FOR FREE
           </button>
         </p>
@@ -755,80 +888,82 @@
     </div>
   </section>
   <!-- form section -->
-  <section>
-    <div class="container   height-row   ">
-      <div class="col-md-11 mx-auto max-width mt">
-        <h1 class="text-start text-md-center display-6 mb-3  ">
-          <div class="fw-normal">Any <span class="span-color">Question Left?</span></div>
-          <div class="container mt-5 border shadow ">
-            <div class="row ">
-              <div class="col-4 reach-us-bg-img-2 border-left  ">
-                <div
-                  class=" d-flex align-items-center justify-content-center justify-content-lg-start px-0 px-xl-4 mt-5">
-                  <img src="/phone.png" width="31.08px" class=" img-fluid me-4">
-                  <h1 class="  fw-normal text-white ">Reach Us </h1>
-                </div>
-                <div
-                  class=" d-flex align-items-center justify-content-center justify-content-lg-start px-0 px-xl-4 mt-5">
-                  <img src="/usa.png" width="31.08px" class=" img-fluid me-4 display-3">
-                  <h6 class="  fw-normal text-white fs-5 ">US:+1(305)250-2023 </h6>
-                </div>
-                <div
-                  class=" d-flex align-items-center justify-content-center justify-content-lg-start px-0 px-xl-4 mt-5">
-                  <img src="/uk.png" width="31.08px" class=" img-fluid me-4 display-3">
-                  <h6 class="  fw-normal text-white fs-5 ">UK:+447897078788 </h6>
-                </div>
-              </div>
-              <div class="col-md-8 mt-5 px-4 ">
-                <div class=" d-flex align-items-center justify-content-center justify-content-lg-start px-0 px-xl-4">
-                </div>
-                <h1 class="text-start fw-normal ">Write us</h1>
-                <form class="row g-3 needs-validation" novalidate id="form-valid">
-                  <div class="col-md-6 text-start  mt-2">
-
-                    <input type="text" name="name" placeholder="Full Name" class="form-control" id="validationCustom01"
-                      required>
-                    <div class="valid-feedback">
-                      Looks good!
-                    </div>
+  <section class="py-5 my-5 ">
+    <div class="container    ">
+      <div class="col-md-11 mx-auto max-width">
+        <!-- <h1 class="text-start text-md-center display-6 mb-3  "> -->
+        <div class="fw-normal">
+          <h1 class="text-start text-md-center display-6 mb-3  ">Any <span class="span-color">Question Left?</span></h1>
+        </div>
+        <div class="container mt-5 border shadow ">
+          <div class="card  any_questions_card mx-auto  border-0">
+            <div class="card-body p-0">
+              <div class="row ">
+                <div class="col-12 col-md-4 any_questions_first_col reach-us-bg-img-2 border-left  ">
+                  <div
+                    class=" d-flex align-items-center justify-content-center justify-content-lg-start px-0 px-xl-4 mt-5">
+                    <img src="/phone.png" width="31.08px" class=" img-fluid me-4">
+                    <h1 class="  fw-normal text-white ">Reach Us </h1>
                   </div>
-                  <div class="col-md-6 text-start  mt-2">
-                    <!-- <label for="validationCustomUsername" class="form-label">Email</label> -->
-                    <div class="input-group has-validation ">
-                      <input type="email" name="email" placeholder="Email" class="form-control"
-                        id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-                      <div class="invalid-feedback fs-28">
-                        Email is required
+                  <div
+                    class=" d-flex align-items-center justify-content-center justify-content-lg-start px-0 px-xl-4 mt-5">
+                    <img src="/usa.png" width="31.08px" class=" img-fluid me-4 display-3">
+                    <h6 class="  fw-normal text-white fs-5 ">US:+1(305)250-2023 </h6>
+                  </div>
+                  <div
+                    class=" d-flex align-items-center justify-content-center justify-content-lg-start px-0 px-xl-4 mt-5">
+                    <img src="/uk.png" width="31.08px" class=" img-fluid me-4 display-3">
+                    <h6 class="  fw-normal text-white fs-5 ">UK: +447897078788 </h6>
+                  </div>
+                </div>
+                <div class="col-md-8 mt-5 px-4 ">
+                  <div class=" d-flex align-items-center justify-content-center justify-content-lg-start px-0 px-xl-4">
+                  </div>
+                  <h1 class="text-start fw-normal ">Write us</h1>
+                  <form class="row g-3 needs-validation" novalidate id="form-valid">
+                    <div class="col-md-6 text-start  mt-5">
+
+                      <input type="text" name="name" placeholder="Full Name" class="form-control"
+                        id="validationCustom01" required>
+                      <div class="valid-feedback">
+                        Looks good!
                       </div>
                     </div>
-                  </div>
-                  <div class="col-md-12 text-start  mt-5 ">
-                    <input type="message" name="message" placeholder="Message" class="form-control"
-                      id="validationCustom02" required>
-                    <div class="valid-feedback">
-                      Looks good!
+                    <div class="col-md-6 text-start  mt-5">
+                      <!-- <label for="validationCustomUsername" class="form-label">Email</label> -->
+                      <div class="input-group has-validation ">
+                        <input type="email" name="email" placeholder="Email" class="form-control"
+                          id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                        <div class="invalid-feedback fs-28">
+                          Email is required
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                  <div class="col-md-12 text-start  mt-5 ">
-                    <input type="phone" name="phone" placeholder="Phone" class="form-control" id="validationCustom03"
-                      required>
-                    <div class="invalid-feedback fs-28">
-                      Phone Number is required
+                    <div class="col-md-12 text-start  mt-5 ">
+                      <input type="message" name="message" placeholder="Message" class="form-control"
+                        id="validationCustom02" required>
+                      <div class="valid-feedback">
+                        Looks good!
+                      </div>
                     </div>
-                  </div>
-                  <div class="col-12 text-end py-5">
-                    <button class="btn span-colors btn-color" style="width: 200px" type="submit">Submit </button>
-                  </div>
-                  <div class="card">
-                    <div id="response">
+                    <div class="col-md-12 text-start  mt-5 ">
+                      <input type="phone" name="phone" placeholder="Phone" class="form-control" id="validationCustom03"
+                        required>
+                      <div class="invalid-feedback fs-28">
+                        Phone Number is required
+                      </div>
+                    </div>
+                    <div class="col-12 text-end py-5 fs-3">
+                      <button class="submit_btn rounded" style="width: 224px;" type="submit">Submit </button>
+                    </div>
+                  </form>
+                </div>
 
-                    </div>
-                  </div>
-                </form>
               </div>
-
             </div>
           </div>
+
+        </div>
       </div>
     </div>
     </div>
